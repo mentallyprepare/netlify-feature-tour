@@ -1,0 +1,1485 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+
+  <title>Clara by Claritel — AI phone agents that act, not just answer</title>
+  <meta name="description" content="Clara is Claritel's agentic AI. She understands the request, reaches into your systems, and finishes the task before the call ends. Built, tested and billed in India." />
+  <meta name="keywords" content="AI voice agent India, Clara Claritel, AI phone agent, Hindi voice AI, Hinglish voice bot, AI collections, AI receptionist India, Claritel" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <link rel="canonical" href="https://clara.claritel.ai/" />
+  <link rel="alternate" href="https://clara.claritel.ai/" hreflang="en-in" />
+  <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Clara by Claritel" />
+  <meta property="og:title" content="Clara — AI phone agents that act, not just answer" />
+  <meta property="og:description" content="Built, tested and billed in India. Test Clara free in your browser." />
+  <meta property="og:url" content="https://clara.claritel.ai/" />
+  <meta property="og:image" content="https://clara.claritel.ai/og.png" />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&family=Roboto+Mono:wght@400;500&display=swap" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "Organization", "@id": "https://claritel.ai/#organization", "name": "Claritel", "url": "https://claritel.ai", "logo": "https://clara.claritel.ai/logo.png", "foundingLocation": { "@type": "Place", "name": "Bengaluru, India" } },
+      { "@type": "WebSite", "@id": "https://clara.claritel.ai/#website", "url": "https://clara.claritel.ai/", "name": "Clara by Claritel", "publisher": { "@id": "https://claritel.ai/#organization" }, "inLanguage": "en-IN" },
+      { "@type": "Product", "name": "Clara", "brand": { "@id": "https://claritel.ai/#organization" }, "category": "Agentic AI platform for business conversations", "description": "AI phone agents that understand the request, reach into your systems and finish the task before the call ends." },
+      { "@type": "ItemList", "name": "What Clara handles",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Customer support" },
+          { "@type": "ListItem", "position": 2, "name": "Sales and outreach" },
+          { "@type": "ListItem", "position": 3, "name": "Collections" },
+          { "@type": "ListItem", "position": 4, "name": "Order management" },
+          { "@type": "ListItem", "position": 5, "name": "Appointment booking" },
+          { "@type": "ListItem", "position": 6, "name": "Account management" }
+        ]},
+      { "@type": "FAQPage", "mainEntity": [
+        { "@type": "Question", "name": "What is Clara?", "acceptedAnswer": { "@type": "Answer", "text": "Clara is Claritel's agentic AI for business conversations. She takes care of voice, WhatsApp and website chat — understanding what someone needs, taking action across a customer's systems, and handing off to a person when one is needed." }},
+        { "@type": "Question", "name": "How is Clara different from a chatbot or IVR?", "acceptedAnswer": { "@type": "Answer", "text": "A chatbot answers. An IVR asks you to press 1. Clara acts. She reads live customer data, follows your business rules, completes the action on your systems, and follows through." }},
+        { "@type": "Question", "name": "Does Clara speak Hindi and Hinglish?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Clara handles English, Hindi, Hinglish, Tamil, Telugu, Kannada, Marathi, Bengali and other Indian languages — including mid-conversation code switching." }},
+        { "@type": "Question", "name": "Who uses Clara?", "acceptedAnswer": { "@type": "Answer", "text": "Teams including Panasonic, Rupeek, Zolve, Quick Heal, Atlantic, Univariety and Flowstack use Clara across sales, service, appointments, renewals, feedback and collections." }},
+        { "@type": "Question", "name": "Can I try Clara without signing up?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — test an agent free in your browser. Five minutes from empty workspace to a real call." }},
+        { "@type": "Question", "name": "How is Clara priced?", "acceptedAnswer": { "@type": "Answer", "text": "Usage-based. Per connected minute for voice, per conversation for chat, per message for WhatsApp, per evaluated interaction for ClaraLens. Prepaid wallet in INR, GST invoice." }}
+      ]}
+    ]
+  }
+  </script>
+
+  <style>
+    /* =========================================================
+       Claritel Design System — dark tokens (Roboto)
+       Sourced verbatim from src/pages/ClaraPage.tsx and src/index.css
+       ========================================================= */
+    :root {
+      --bg:         #0D0E1C;
+      --bg-2:       #0C0F28;
+      --surface:    #181A1B;
+      --surface-hi: #27292B;
+      --border:     rgba(255,255,255,0.15);
+      --border-2:   rgba(255,255,255,0.08);
+      --border-brand: #B4B4EC;                 /* brand/40 */
+      --txt:        #F2F2F3;
+      --txt-2:      #AFB3B6;
+      --txt-3:      rgba(242,242,243,0.35);
+
+      /* Brand ramp */
+      --b99:#F7F7FF; --b95:#ECECFF; --b90:#E6E6FF; --b80:#E1E1FF;
+      --b60:#D0D0FF; --b50:#C6C6FC; --b40:#B4B4EC; --b35:#A1A1EC;
+      --b30:#9393E7; --b25:#7373C5; --b20:#5C5CAB; --b15:#46468F;
+      --b10:#2D2D5F; --b5:#1B1B3C;
+
+      --brand:       var(--b50);   /* CTA background — lavender */
+      --brand-mid:   var(--b30);
+      --brand-deep:  var(--b5);    /* CTA text — deep navy */
+      --brand-sub:   var(--b10);   /* deep indigo backdrop */
+      --brand-sec:   #7168A5;
+      --ok:          #80D997;
+      --hot:         #FF5F57;
+      --glow:        #3B4FFF;
+
+      --font: 'Roboto', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+      --mono: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+      --maxw: 1120px;
+      --gutter: clamp(20px, 4vw, 32px);
+      --section-y: clamp(72px, 10vw, 128px);
+
+      --r-xs: 8px; --r-sm: 12px; --r-md: 16px; --r-lg: 20px; --r-pill: 999px;
+      --ease: cubic-bezier(.2,.7,.2,1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--txt);
+      font-family: var(--font);
+      font-size: 15px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    :focus-visible { outline: 2px solid var(--b40); outline-offset: 3px; border-radius: 4px; }
+    img { display: block; max-width: 100%; height: auto; }
+    p { margin: 0; }
+    ::selection { background: var(--glow); color: #fff; }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,.10); border-radius: 3px; }
+
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
+
+    h1, h2, h3, h4 { margin: 0; font-weight: 900; letter-spacing: -0.04em; line-height: 1.02; }
+    h1 { font-weight: 900; }
+    h2 { font-size: clamp(28px, 3.8vw, 50px); letter-spacing: -0.04em; line-height: 1.07; }
+    h3 { font-size: clamp(20px, 1.7vw, 26px); letter-spacing: -0.03em; font-weight: 700; }
+    h4 { font-size: 16px; letter-spacing: -0.02em; font-weight: 700; }
+
+    /* =========================================================
+       Tag component — pill with lavender border
+       ========================================================= */
+    .tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11.5px; font-weight: 500;
+      padding: 6px 14px; border-radius: var(--r-pill);
+      border: 1px solid var(--border-brand);
+      color: var(--brand);
+      letter-spacing: 0.06em;
+    }
+    .tag .dot { width: 6px; height: 6px; border-radius: 999px; background: var(--ok); animation: pulse-dot 2s infinite; }
+
+    .mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+    .muted { color: var(--txt-3); }
+    .txt2 { color: var(--txt-2); }
+
+    /* =========================================================
+       Buttons — lavender on dark navy is the signature primary
+       ========================================================= */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      height: 44px; padding: 0 22px;
+      border-radius: var(--r-xs);
+      font-family: var(--font); font-size: 14px; font-weight: 500;
+      cursor: pointer; border: 1px solid transparent;
+      transition: filter 220ms var(--ease), background 220ms var(--ease), border-color 220ms var(--ease), transform 80ms var(--ease);
+      white-space: nowrap;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--brand); color: var(--brand-deep); }
+    .btn-primary:hover { filter: brightness(1.06); }
+    .btn-outline { background: transparent; color: var(--txt); border-color: var(--border); }
+    .btn-outline:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.24); }
+    .btn-pill { height: 40px; padding: 0 20px; border-radius: var(--r-pill); font-weight: 500; }
+    .btn-sm { height: 38px; padding: 0 16px; font-size: 13px; }
+
+    /* =========================================================
+       NAV — sticky, centered pill nav
+       ========================================================= */
+    .site-nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(8,12,32,0.65);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid transparent;
+      transition: background 220ms var(--ease), border-color 220ms var(--ease);
+    }
+    body.scrolled .site-nav {
+      background: rgba(8,12,32,0.92);
+      border-bottom-color: var(--border);
+    }
+    .nav-row {
+      display: flex; align-items: center;
+      padding: 16px 0;
+      gap: 20px;
+    }
+    .logo { display: inline-flex; align-items: center; gap: 10px; margin-right: auto; }
+    .logo-mark {
+      width: 30px; height: 30px; border-radius: 8px;
+      background: var(--brand);
+      display: grid; place-items: center;
+      color: #fff;
+    }
+    .logo-name { font-weight: 700; font-size: 14px; letter-spacing: -0.02em; line-height: 1.1; color: var(--txt); }
+    .logo-name small { display: block; font-size: 10.5px; font-weight: 400; letter-spacing: 0.06em; color: var(--txt-3); line-height: 1; margin-top: 2px; }
+
+    .nav-pill {
+      display: none;
+      align-items: center;
+      padding: 4px; gap: 2px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: var(--r-pill);
+    }
+    @media (min-width: 900px) { .nav-pill { display: inline-flex; } }
+    .nav-pill a {
+      padding: 6px 14px; border-radius: var(--r-pill);
+      font-size: 13px; color: var(--txt-2);
+      transition: background 220ms var(--ease), color 220ms var(--ease);
+    }
+    .nav-pill a:hover { color: var(--txt); }
+    .nav-pill a.active { background: var(--surface-hi); color: var(--txt); font-weight: 500; }
+
+    .nav-cta { margin-left: auto; }
+    .menu-toggle {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; border-radius: 8px;
+      background: transparent; border: 1px solid var(--border);
+      color: var(--txt); cursor: pointer;
+    }
+    @media (min-width: 900px) { .menu-toggle { display: none; } }
+
+    .mobile-menu { display: none; padding: 16px var(--gutter) 20px; border-top: 1px solid var(--border); background: var(--bg-2); }
+    .mobile-menu[data-open="true"] { display: block; }
+    .mobile-menu a { display: block; padding: 12px 0; font-size: 15px; color: var(--txt-2); }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+    .hero {
+      position: relative; overflow: hidden;
+      min-height: 92vh;
+    }
+    .hero-ghost {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      pointer-events: none; user-select: none; overflow: hidden;
+      z-index: 0;
+    }
+    .hero-ghost span {
+      font-weight: 900;
+      font-size: clamp(110px, 17vw, 240px);
+      letter-spacing: -0.055em;
+      color: rgba(45,45,95,0.60);
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .hero-glow {
+      position: absolute; top: 10%; left: 50%; transform: translateX(-50%);
+      width: 800px; height: 600px;
+      background: radial-gradient(ellipse, rgba(40,70,255,0.10) 0%, transparent 60%);
+      filter: blur(80px);
+      pointer-events: none; z-index: 0;
+    }
+
+    .hero-inner {
+      position: relative; z-index: 10;
+      display: flex; align-items: center; gap: 32px;
+      padding-top: 40px;
+      min-height: 88vh;
+    }
+    @media (max-width: 900px) {
+      .hero-inner { flex-direction: column; gap: 40px; padding-top: 40px; min-height: auto; padding-bottom: 40px; }
+    }
+    .hero-copy { flex: 1; max-width: 520px; }
+    .hero-copy h1 {
+      margin-top: 28px;
+      font-size: clamp(36px, 4.8vw, 64px);
+      letter-spacing: -0.052em;
+      line-height: 1.02;
+      font-weight: 900;
+    }
+    .hero-copy h1 .mute-part { color: var(--txt-3); }
+    .hero-copy .sub {
+      margin-top: 24px;
+      color: var(--txt-2);
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 46ch;
+    }
+    .hero-ctas { display: flex; gap: 12px; margin-top: 36px; flex-wrap: wrap; }
+    .hero-note { margin-top: 14px; font-size: 12px; color: var(--txt-3); }
+
+    .mini-stats { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+    .mini-stat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      padding: 10px 16px;
+      text-align: center;
+      backdrop-filter: blur(16px);
+    }
+    .mini-stat .v { font-weight: 700; font-size: 14px; color: var(--brand); }
+    .mini-stat .l { font-size: 11px; color: var(--txt-3); margin-top: 2px; }
+
+    .hero-visual {
+      flex: 1;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+      min-height: 520px;
+    }
+    .hero-visual-inner { width: 100%; max-width: 480px; position: relative; }
+
+    /* Orb — periwinkle → deep navy, ground halo, ripple */
+    .orb-stage {
+      position: relative;
+      width: 360px; height: 360px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto;
+    }
+    .orb-bloom {
+      position: absolute; inset: -100px;
+      background: radial-gradient(circle, rgba(147,147,231,0.20) 0%, rgba(92,92,171,0.07) 45%, transparent 70%);
+      filter: blur(50px);
+      pointer-events: none;
+    }
+    .orb-halo {
+      position: absolute; bottom: -24px; left: 50%; transform: translateX(-50%);
+      width: 280px; height: 50px;
+      background: radial-gradient(ellipse, rgba(180,180,236,0.75) 0%, rgba(147,147,231,0.28) 50%, transparent 75%);
+      filter: blur(16px);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .orb-ripple {
+      position: absolute; inset: -14px;
+      border-radius: 50%;
+      border: 1px solid rgba(180,180,236,0.20);
+      animation: ripple-out 3.8s ease-out infinite;
+      pointer-events: none;
+    }
+    .orb {
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      position: relative;
+      animation: orb-pulse 5s ease-in-out infinite;
+    }
+    .orb-body {
+      position: absolute; inset: 0; border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #9393E7 0%, #5C5CAB 35%, #2D2D5F 68%, #1B1B3C 100%);
+      box-shadow:
+        inset 0 -28px 56px rgba(45,45,95,0.8),
+        inset 0 18px 36px rgba(198,198,252,0.18),
+        0 0 70px rgba(147,147,231,0.35),
+        0 28px 56px rgba(92,92,171,0.28);
+    }
+    .orb-highlight {
+      position: absolute; top: 12%; left: 20%;
+      width: 38%; height: 28%; border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(230,230,255,0.55) 0%, transparent 70%);
+      filter: blur(5px);
+    }
+    .orb-icon {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .orb-icon svg { width: 82px; height: 82px; }
+
+    /* Floating glass cards */
+    .glass {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 14px;
+    }
+    .fcard { position: absolute; z-index: 10; }
+    .fcard-1 { top: 8%; left: -6%; min-width: 200px; padding: 12px 16px; animation: float-slow 5s ease-in-out infinite; }
+    .fcard-2 { top: 18%; right: -8%; min-width: 220px; padding: 14px 16px; animation: float-fast 4s ease-in-out infinite; }
+    .fcard-3 { bottom: -4%; left: 50%; transform: translateX(-50%); min-width: 240px; padding: 10px 16px; animation: float-slow 6s ease-in-out infinite 1s; }
+    @media (max-width: 700px) {
+      .fcard-1, .fcard-2, .fcard-3 { position: relative; inset: auto; transform: none; margin: 12px auto; display: block; width: min(90%, 300px); }
+    }
+    .fcard .row { display: flex; align-items: center; gap: 12px; }
+    .fcard .avatar {
+      width: 32px; height: 32px; border-radius: 10px;
+      background: rgba(113,104,165,0.18);
+      display: grid; place-items: center; font-size: 16px;
+    }
+    .fcard .title { font-size: 12.5px; font-weight: 600; color: var(--txt); }
+    .fcard .sub { display: flex; align-items: center; gap: 6px; margin-top: 3px; font-size: 11.5px; color: var(--ok); }
+    .fcard .sub .live-dot { width: 6px; height: 6px; border-radius: 999px; background: var(--ok); animation: pulse-dot 2s infinite; }
+    .fcard .head {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 4px;
+    }
+    .fcard .head strong { font-size: 13px; color: var(--txt); font-weight: 600; }
+    .fcard .head .chip { font-size: 10.5px; padding: 2px 8px; border-radius: 999px; background: rgba(180,180,236,0.12); color: var(--brand); }
+    .fcard .meta { font-size: 11.5px; color: var(--txt-2); margin-bottom: 10px; }
+    .fcard .bar-label { font-size: 10.5px; color: var(--txt-3); margin-bottom: 4px; }
+    .fcard .bar { height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; }
+    .fcard .bar .fill { height: 100%; background: linear-gradient(90deg, var(--b40), var(--b50)); width: 74%; }
+    .fcard .live-pill { font-size: 10.5px; padding: 3px 10px; border-radius: 999px; background: rgba(255,255,255,0.10); color: var(--txt); font-weight: 500; margin-left: auto; display: inline-block; margin-top: 8px; }
+    .fcard .tick {
+      width: 24px; height: 24px; border-radius: 999px;
+      background: rgba(74,222,128,0.12); color: var(--ok);
+      display: grid; place-items: center; font-size: 12px;
+    }
+
+    /* Use case strip below hero */
+    .usecase-strip {
+      position: relative; z-index: 10;
+      border-top: 1px solid var(--border);
+    }
+    .usecase-strip .row {
+      display: flex; flex-wrap: wrap; gap: 12px 40px;
+      align-items: center; justify-content: space-between;
+      padding: 20px 0;
+    }
+    .usecase-strip a {
+      font-size: 13px; font-weight: 500;
+      color: rgba(180,180,200,0.28);
+      transition: color 220ms var(--ease);
+    }
+    .usecase-strip a:hover { color: var(--txt-2); }
+
+    /* =========================================================
+       Sections
+       ========================================================= */
+    section { position: relative; }
+    .section { padding: var(--section-y) 0; }
+    .section-head { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+    .section-head h2 { margin-top: 20px; }
+    .section-head p { margin-top: 20px; color: var(--txt-2); font-size: 16px; }
+
+    /* =========================================================
+       Bento — Workspace
+       ========================================================= */
+    .bento {
+      display: grid; grid-template-columns: 1fr; gap: 16px;
+    }
+    @media (min-width: 900px) {
+      .bento { grid-template-columns: 1.24fr 1fr 1fr; grid-auto-rows: minmax(200px, auto); }
+    }
+    .bento-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex; flex-direction: column; gap: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+    .bento-card h3 { color: var(--txt); }
+    .bento-card p { color: var(--txt-2); font-size: 14px; }
+    .bento-tall { grid-row: span 2; min-height: 460px; }
+    .bento-wide { grid-column: span 2; }
+    .bento-eyebrow {
+      font-family: var(--mono);
+      font-size: 10.5px; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--txt-3);
+      font-weight: 500;
+    }
+
+    /* Builder mini */
+    .builder-steps { display: flex; flex-direction: column; gap: 4px; margin: 0; padding: 0; list-style: none; }
+    .builder-step {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 12px; border-radius: 12px;
+      background: transparent; border: 1px solid transparent;
+    }
+    .builder-step.active {
+      background: var(--surface-hi);
+      border-color: var(--border-brand);
+    }
+    .builder-step .num {
+      width: 20px; height: 20px; border-radius: 999px;
+      display: grid; place-items: center;
+      font-size: 10.5px; font-weight: 700;
+      background: transparent; border: 1px solid var(--border-brand); color: var(--txt-3);
+    }
+    .builder-step.active .num { background: var(--brand); color: var(--brand-deep); border-color: var(--brand); }
+    .builder-step .lb { font-size: 13.5px; color: var(--txt-2); }
+    .builder-step.active .lb { color: var(--txt); }
+    .builder-step .rq { margin-left: auto; font-size: 10.5px; color: var(--txt-3); text-transform: uppercase; letter-spacing: 0.1em; }
+
+    /* Live call */
+    .live-call { padding: 0; }
+    .lc-head {
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px 20px; border-bottom: 1px solid var(--border);
+    }
+    .lc-head .dot { width: 8px; height: 8px; border-radius: 999px; background: var(--hot); animation: pulse-dot 2.2s infinite; }
+    .lc-head .title { font-size: 12.5px; color: var(--txt-2); }
+    .lc-head .clock { margin-left: auto; font-family: var(--mono); font-size: 11.5px; color: var(--txt-3); }
+    .lc-body { padding: 16px 20px; display: flex; flex-direction: column; gap: 14px; }
+    .lc-line { display: flex; flex-direction: column; gap: 3px; animation: slide-up 0.4s cubic-bezier(0.22,0.7,0.3,1) both; }
+    .lc-who { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--txt-3); }
+    .lc-line.clara .lc-who { color: var(--brand); }
+    .lc-tx { font-size: 13.5px; color: var(--txt-2); line-height: 1.4; }
+    .lc-line.clara .lc-tx { color: var(--txt); }
+    .lc-fn {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 6px;
+      padding: 6px 12px;
+      background: var(--surface-hi); border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 11.5px; color: var(--brand);
+      font-family: var(--mono);
+    }
+    .lc-fn .ok { margin-left: 8px; color: var(--ok); }
+    .lc-resolved {
+      display: flex; align-items: center; gap: 12px;
+      margin: 0 20px 20px; padding: 12px;
+      background: var(--surface-hi); border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .lc-resolved .tick { width: 24px; height: 24px; border-radius: 999px; background: rgba(74,222,128,0.12); color: var(--ok); display: grid; place-items: center; font-size: 12px; }
+    .lc-resolved .t { font-size: 12px; font-weight: 500; color: var(--txt); }
+    .lc-resolved .s { font-size: 11px; color: var(--txt-3); margin-top: 2px; }
+
+    /* Analytics bars */
+    .an { display: flex; flex-direction: column; gap: 12px; height: 100%; }
+    .an-title { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--txt-3); }
+    .an-bars { display: flex; align-items: flex-end; gap: 2px; height: 80px; }
+    .an-bars i {
+      flex: 1; border-radius: 2px 2px 0 0;
+      background: rgba(180,180,236,0.18);
+      transform-origin: bottom;
+      animation: bar-grow 0.5s var(--ease) both;
+    }
+    .an-bars i.hi { background: var(--brand); }
+    .an-foot {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-top: 12px; border-top: 1px solid var(--border);
+      font-size: 12px; color: var(--txt-2);
+    }
+    .an-foot strong { color: var(--txt); font-weight: 500; }
+
+    /* =========================================================
+       Products / cards (dark)
+       ========================================================= */
+    .prod-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 40px; }
+    @media (min-width: 900px) { .prod-grid { grid-template-columns: repeat(3, 1fr); } }
+    .prod {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 28px;
+      display: flex; flex-direction: column; gap: 12px;
+      transition: transform 300ms var(--ease), border-color 300ms var(--ease);
+    }
+    .prod:hover { transform: translateY(-2px); border-color: var(--border-brand); }
+    .prod .label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brand); font-weight: 500; }
+    .prod .quote { color: var(--txt); font-size: 18px; line-height: 1.35; font-weight: 500; letter-spacing: -0.01em; }
+    .prod .body { color: var(--txt-2); font-size: 14px; }
+    .prod .learn { margin-top: auto; color: var(--brand); font-size: 13px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; }
+
+    /* =========================================================
+       Customers (7 confirmed brands)
+       ========================================================= */
+    .cust-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 40px; }
+    @media (min-width: 700px) { .cust-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1000px) { .cust-grid { grid-template-columns: repeat(3, 1fr); } }
+    .cust {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 22px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .cust h3 { color: var(--txt); font-size: 18px; letter-spacing: -0.02em; font-weight: 700; }
+    .cust .q { color: var(--txt); font-size: 13.5px; line-height: 1.5; font-style: italic; font-family: 'Roboto', serif; font-weight: 400; }
+    .cust ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+    .cust li { font-size: 12.5px; color: var(--txt-2); padding-left: 12px; position: relative; }
+    .cust li::before { content: ""; position: absolute; left: 0; top: 9px; width: 4px; height: 4px; border-radius: 999px; background: var(--brand); }
+    .cust .attr { margin-top: auto; padding-top: 10px; border-top: 1px solid var(--border); font-size: 11px; color: var(--txt-3); font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.1em; }
+
+    /* =========================================================
+       Live demo — Vapi-style agent tabs
+       ========================================================= */
+    .agent-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      margin-top: 40px;
+    }
+    .agent-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+    .agent-tab {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      color: var(--txt);
+      padding: 10px 16px; border-radius: 999px;
+      font-family: var(--font); font-size: 13px; font-weight: 500;
+      cursor: pointer;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .agent-tab .k { font-family: var(--mono); font-size: 10px; color: var(--txt-3); }
+    .agent-tab[aria-selected="true"] { background: var(--brand); color: var(--brand-deep); border-color: var(--brand); }
+    .agent-tab[aria-selected="true"] .k { color: var(--brand-deep); opacity: 0.7; }
+
+    .agent-stage {
+      margin-top: 28px;
+      display: grid; grid-template-columns: 1fr; gap: 24px;
+      align-items: center;
+    }
+    @media (min-width: 900px) { .agent-stage { grid-template-columns: 1fr auto; } }
+    .agent-info h3 { color: var(--txt); font-size: 20px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .agent-info p { color: var(--txt-2); font-size: 14.5px; max-width: 44ch; }
+    .agent-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .agent-meta span {
+      padding: 4px 10px; border-radius: 999px;
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--txt-2);
+    }
+    .agent-call {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 14px 22px 14px 14px; border-radius: 999px;
+      background: var(--brand); color: var(--brand-deep);
+      font-family: var(--font); font-weight: 600; font-size: 14px;
+      border: none; cursor: pointer;
+      transition: filter 220ms var(--ease), transform 80ms var(--ease);
+    }
+    .agent-call:hover { filter: brightness(1.05); }
+    .agent-call:active { transform: scale(0.98); }
+    .agent-call .ring {
+      width: 34px; height: 34px; border-radius: 999px;
+      background: rgba(27,27,60,0.18);
+      display: grid; place-items: center;
+    }
+    .agent-note { margin-top: 20px; color: var(--txt-3); font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* =========================================================
+       Integrations
+       ========================================================= */
+    .int-row {
+      display: grid; grid-template-columns: 1fr; gap: 12px;
+      padding: 20px 0;
+      border-top: 1px solid var(--border);
+    }
+    .int-row:last-child { border-bottom: 1px solid var(--border); }
+    @media (min-width: 700px) { .int-row { grid-template-columns: 180px 1fr; align-items: center; } }
+    .int-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brand); }
+    .int-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .int-chip {
+      padding: 6px 12px; border-radius: 999px;
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      font-size: 13px; color: var(--txt); font-weight: 500;
+    }
+    .int-chip.tbd { color: var(--txt-3); background: transparent; border-style: dashed; font-style: italic; }
+
+    /* =========================================================
+       FAQ
+       ========================================================= */
+    .faq-list { margin-top: 40px; max-width: 780px; margin-left: auto; margin-right: auto; }
+    .faq {
+      padding: 20px 0;
+      border-top: 1px solid var(--border);
+    }
+    .faq:last-of-type { border-bottom: 1px solid var(--border); }
+    .faq[open] .plus { transform: rotate(45deg); }
+    .faq-q {
+      list-style: none;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      cursor: pointer;
+      font-size: 17px; font-weight: 700;
+      color: var(--txt); letter-spacing: -0.01em;
+    }
+    .faq-q::-webkit-details-marker { display: none; }
+    .plus {
+      width: 26px; height: 26px; border-radius: 999px;
+      background: var(--surface-hi); border: 1px solid var(--border);
+      color: var(--brand);
+      display: grid; place-items: center;
+      font-size: 16px; line-height: 1;
+      flex: none;
+      transition: transform 220ms var(--ease);
+    }
+    .faq-a { padding-top: 12px; color: var(--txt-2); font-size: 14.5px; max-width: 68ch; }
+
+    /* =========================================================
+       Final CTA
+       ========================================================= */
+    .final-cta { position: relative; text-align: center; padding: clamp(96px, 14vw, 160px) 0; overflow: hidden; }
+    .final-cta .ghost {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      pointer-events: none; user-select: none; overflow: hidden;
+    }
+    .final-cta .ghost span {
+      font-weight: 900; font-size: clamp(90px, 14vw, 200px);
+      letter-spacing: -0.055em; color: rgba(45,45,95,0.35); line-height: 1; white-space: nowrap;
+    }
+    .final-cta-inner { position: relative; z-index: 1; }
+    .final-cta h2 { max-width: 20ch; margin: 0 auto; }
+    .final-cta h2 .mute-part { color: var(--txt-3); }
+    .final-cta p { max-width: 60ch; margin: 20px auto 0; color: var(--txt-2); font-size: 16px; }
+    .final-cta .hero-ctas { justify-content: center; margin-top: 36px; }
+
+    /* =========================================================
+       Footer
+       ========================================================= */
+    .site-footer {
+      background: #06071A;
+      border-top: 1px solid var(--border-2);
+      padding: 60px 0 32px;
+      color: var(--txt-2);
+    }
+    .foot-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    @media (min-width: 800px) { .foot-grid { grid-template-columns: repeat(4, 1fr); } }
+    .foot-grid h4 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--txt-3); font-weight: 500; margin: 0 0 14px; }
+    .foot-grid ul { list-style: none; padding: 0; margin: 0; }
+    .foot-grid li { margin-bottom: 10px; }
+    .foot-grid a { color: var(--txt-2); font-size: 13.5px; }
+    .foot-grid a:hover { color: var(--txt); }
+    .foot-brand { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; padding-bottom: 32px; border-bottom: 1px solid var(--border-2); margin-bottom: 40px; }
+    .foot-brand h2 { font-size: clamp(22px, 2vw, 26px); color: var(--txt); max-width: 26ch; font-weight: 500; letter-spacing: -0.02em; }
+    .foot-brand .tag-line { color: var(--txt-3); font-size: 13px; margin-top: 10px; }
+    .foot-bottom {
+      margin-top: 40px; padding-top: 20px;
+      border-top: 1px solid var(--border-2);
+      display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+      color: var(--txt-3); font-size: 12.5px;
+    }
+
+    /* =========================================================
+       Ask Clara chat widget (bottom-left)
+       ========================================================= */
+    .askbtn {
+      position: fixed; bottom: 20px; left: 20px; z-index: 60;
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 10px 18px;
+      border-radius: 20px;
+      background: var(--brand-sub); color: var(--brand);
+      border: 1px solid var(--border-brand);
+      font-family: var(--font); font-weight: 500; font-size: 13.5px;
+      cursor: pointer;
+      box-shadow: 0 8px 32px rgba(45,45,95,0.55);
+      transition: transform 220ms var(--ease), background 220ms var(--ease);
+    }
+    .askbtn:hover { transform: scale(1.04); }
+    .askbtn[data-open="true"] { background: var(--surface-hi); color: var(--txt-2); border-color: var(--border); }
+    .askpanel {
+      position: fixed; bottom: 72px; left: 20px; z-index: 55;
+      width: 340px; max-width: calc(100vw - 40px);
+      height: 480px; max-height: calc(100vh - 100px);
+      background: rgba(24,26,27,0.92);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border);
+      border-radius: 20px; overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.60);
+      display: none;
+      flex-direction: column;
+    }
+    .askpanel[data-open="true"] { display: flex; }
+    .askpanel .head {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 16px;
+      background: var(--surface-hi); border-bottom: 1px solid var(--border);
+    }
+    .askpanel .avatar {
+      width: 34px; height: 34px; border-radius: 999px;
+      background: radial-gradient(circle at 35% 30%, #9393E7, #1B1B3C);
+      display: grid; place-items: center;
+      position: relative;
+    }
+    .askpanel .avatar::after {
+      content: ""; position: absolute; bottom: -1px; right: -1px;
+      width: 10px; height: 10px; border-radius: 999px;
+      background: var(--ok); border: 2px solid var(--surface-hi);
+    }
+    .askpanel .who { color: var(--txt); font-size: 13.5px; font-weight: 600; }
+    .askpanel .who .s { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--ok); font-weight: 400; margin-top: 2px; }
+    .askpanel .msgs {
+      flex: 1; overflow-y: auto; padding: 16px;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .askpanel .m { display: flex; gap: 8px; align-items: flex-end; }
+    .askpanel .m.me { justify-content: flex-end; }
+    .askpanel .bubble {
+      padding: 10px 14px;
+      background: var(--surface-hi);
+      border: 1px solid var(--border);
+      color: var(--txt);
+      border-radius: 4px 16px 16px 16px;
+      font-size: 13px; line-height: 1.4;
+      max-width: 78%;
+    }
+    .askpanel .m.me .bubble { background: var(--brand-sub); color: var(--brand); border-color: rgba(180,180,236,0.18); border-radius: 16px 4px 16px 16px; }
+    .askpanel .input {
+      padding: 12px;
+      border-top: 1px solid var(--border);
+      display: flex; gap: 8px;
+      background: var(--surface);
+    }
+    .askpanel .input input {
+      flex: 1;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 14px;
+      color: var(--txt); font-family: var(--font); font-size: 13px;
+      outline: none;
+    }
+    .askpanel .input input:focus { border-color: var(--border-brand); }
+    .askpanel .input button {
+      width: 34px; height: 34px; border-radius: 999px;
+      background: var(--brand); color: var(--brand-deep);
+      border: none; cursor: pointer;
+      display: grid; place-items: center;
+      transition: filter 220ms var(--ease), transform 80ms var(--ease);
+    }
+    .askpanel .input button:hover { filter: brightness(1.06); }
+    .askpanel .input button:active { transform: scale(0.94); }
+
+    /* =========================================================
+       Keyframes
+       ========================================================= */
+    @keyframes pulse-dot { 0%,100%{opacity:1;} 50%{opacity:0.2;} }
+    @keyframes slide-up { from{opacity:0; transform: translateY(8px);} to{opacity:1; transform: translateY(0);} }
+    @keyframes ripple-out { 0%{transform: scale(0.88); opacity: 0.8;} 100%{transform: scale(1.45); opacity: 0;} }
+    @keyframes eq-bar { 0%,100%{height:4px;} 50%{height:22px;} }
+    @keyframes bar-grow { from{transform: scaleY(0);} to{transform: scaleY(1);} }
+    @keyframes float-slow { 0%,100%{transform: translateY(0);} 50%{transform: translateY(-8px);} }
+    @keyframes float-fast { 0%,100%{transform: translateY(0);} 50%{transform: translateY(-5px);} }
+    @keyframes orb-pulse { 0%,100%{filter: brightness(1);} 50%{filter: brightness(1.10);} }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav class="site-nav" role="banner">
+    <div class="container nav-row">
+      <a class="logo" href="#top">
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#1B1B3C" stroke-width="2"/><circle cx="12" cy="12" r="2.5" fill="#1B1B3C"/></svg>
+        </span>
+        <span class="logo-name">Clara<small>by Claritel</small></span>
+      </a>
+
+      <div class="nav-pill" aria-label="Primary">
+        <a href="#top" class="active">Home</a>
+        <a href="#products">Product</a>
+        <a href="#workspace">Build</a>
+        <a href="#demo">Inbound</a>
+        <a href="#customers">India</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+
+      <div class="nav-cta">
+        <a class="btn btn-primary btn-pill btn-sm" href="#demo">Test Clara free</a>
+        <button class="menu-toggle" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" data-open="false">
+      <a href="#products">Product</a>
+      <a href="#workspace">Build</a>
+      <a href="#demo">Inbound</a>
+      <a href="#customers">India</a>
+      <a href="#pricing">Pricing</a>
+    </div>
+  </nav>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+      <div class="hero-ghost" aria-hidden="true"><span>CLARA AI</span></div>
+      <div class="hero-glow" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="tag"><span class="dot" aria-hidden="true"></span> Test free in your browser</span>
+          <h1>Clara doesn't just answer. <span class="mute-part">She acts.</span></h1>
+          <p class="sub">AI phone agents that understand the request, reach into your systems, and finish the task before the call ends. Built, tested and billed in India.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#demo">Test an agent free</a>
+            <a class="btn btn-outline" href="#workspace">See how it's built</a>
+          </div>
+          <p class="hero-note">Five minutes from empty workspace to a real call.</p>
+
+          <div class="mini-stats">
+            <div class="mini-stat"><div class="v">84%</div><div class="l">Connection rate</div></div>
+            <div class="mini-stat"><div class="v">&lt; 800ms</div><div class="l">Response latency</div></div>
+            <div class="mini-stat"><div class="v">5 min</div><div class="l">To first call</div></div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-visual-inner">
+
+            <div class="orb-stage">
+              <div class="orb-bloom"></div>
+              <div class="orb-ripple"></div>
+              <div class="orb-halo"></div>
+              <div class="orb">
+                <div class="orb-body"></div>
+                <div class="orb-highlight"></div>
+                <div class="orb-icon">
+                  <svg viewBox="0 0 82 82" fill="none">
+                    <path d="M26 20h10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2c0 8 5 15 12 18v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2C36 58 24 46 24 22a2 2 0 0 1 2-2z" fill="white" fill-opacity="0.92"/>
+                    <path d="M52 28 Q57 34 52 40" stroke="white" stroke-width="2" stroke-linecap="round" fill="none" stroke-opacity="0.7"/>
+                    <path d="M56 24 Q64 34 56 44" stroke="white" stroke-width="2" stroke-linecap="round" fill="none" stroke-opacity="0.45"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="fcard fcard-1 glass">
+              <div class="row">
+                <div class="avatar">🎧</div>
+                <div>
+                  <div class="title">Clara is Active</div>
+                  <div class="sub"><span class="live-dot"></span> Live Execution</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="fcard fcard-2 glass">
+              <div class="head">
+                <strong>Inbound call</strong>
+                <span class="chip">AI Signal</span>
+              </div>
+              <div class="meta">Order support · Hinglish</div>
+              <div class="bar-label">Confidence</div>
+              <div class="bar"><div class="fill"></div></div>
+              <div style="display:flex; justify-content:flex-end;"><span class="live-pill">Live</span></div>
+            </div>
+
+            <div class="fcard fcard-3 glass">
+              <div class="row">
+                <div class="tick">✓</div>
+                <div>
+                  <div class="title">Call resolved</div>
+                  <div style="font-size:11px; color: var(--txt-3); margin-top: 2px;">OD-44821 · WhatsApp sent</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="usecase-strip">
+        <div class="wrap">
+          <div class="row">
+            <a href="#">Customer support</a>
+            <a href="#">Sales &amp; outreach</a>
+            <a href="#">Collections</a>
+            <a href="#">Order management</a>
+            <a href="#">Appointment booking</a>
+            <a href="#">Account management</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============ WORKSPACE BENTO ============ -->
+    <section id="workspace" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="tag">Workspace</span>
+          <h2>One workspace <span style="color: var(--txt-3);">that runs the whole phone floor.</span></h2>
+          <p>Build the agent, prove it works, put it on real calls, and read what happened — without changing tools.</p>
+        </div>
+
+        <div class="bento">
+          <!-- Builder card -->
+          <div class="bento-card bento-tall">
+            <span class="bento-eyebrow">Build</span>
+            <ol class="builder-steps" style="margin-top: 4px;">
+              <li class="builder-step active"><span class="num">1</span><span class="lb">Identity</span><span class="rq">req</span></li>
+              <li class="builder-step active"><span class="num">2</span><span class="lb">Prompt</span><span class="rq">req</span></li>
+              <li class="builder-step active"><span class="num">3</span><span class="lb">Behaviour</span><span class="rq">req</span></li>
+              <li class="builder-step"><span class="num">4</span><span class="lb">Knowledge</span><span class="rq">opt</span></li>
+              <li class="builder-step"><span class="num">5</span><span class="lb">Actions</span><span class="rq">opt</span></li>
+            </ol>
+            <div style="margin-top: auto;">
+              <h3 style="font-size: 20px; margin-bottom: 8px;">Five steps. Autosaved as you go.</h3>
+              <p>Identity, prompt, behaviour, knowledge, actions. Add a knowledge base or a live API call whenever you want to.</p>
+            </div>
+          </div>
+
+          <!-- Live call card -->
+          <div class="bento-card bento-tall live-call" style="padding: 0;">
+            <div class="lc-head">
+              <span class="dot"></span>
+              <span class="title">Order support · Hinglish</span>
+              <span class="clock">00:07</span>
+            </div>
+            <div class="lc-body">
+              <div class="lc-line"><span class="lc-who">Caller</span><span class="lc-tx">Haan, mera order abhi tak nahi aaya — order ID hai OD-44821.</span></div>
+              <div class="lc-line clara"><span class="lc-who">Clara</span><span class="lc-tx">Ek second — main check karti hoon.</span>
+                <span class="lc-fn">⚡ check_order_status <span class="ok">200 OK</span></span>
+              </div>
+              <div class="lc-line clara"><span class="lc-who">Clara</span><span class="lc-tx">Aapka order Bengaluru hub se kal sham tak deliver hoga.</span></div>
+              <div class="lc-line"><span class="lc-who">Caller</span><span class="lc-tx">Okay, WhatsApp update milegi?</span></div>
+              <div class="lc-line clara"><span class="lc-who">Clara</span><span class="lc-tx">Bilkul, main abhi bhejti hoon.</span>
+                <span class="lc-fn">⚡ send_whatsapp_update <span class="ok">200 OK</span></span>
+              </div>
+            </div>
+            <div class="lc-resolved">
+              <span class="tick">✓</span>
+              <div>
+                <div class="t">Resolved — ticket updated</div>
+                <div class="s">OD-44821 · WhatsApp sent</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Analytics bars card -->
+          <div class="bento-card">
+            <span class="bento-eyebrow">Analyze</span>
+            <div class="an">
+              <div class="an-title">Calls, last 30 days</div>
+              <div class="an-bars">
+                <i style="height:31px"></i><i style="height:43px"></i><i style="height:34px"></i><i style="height:56px"></i><i style="height:70px"></i><i style="height:49px"></i><i style="height:61px"></i><i style="height:75px"></i><i style="height:41px"></i><i style="height:54px"></i><i style="height:35px"></i><i style="height:64px"></i><i style="height:72px"></i><i style="height:46px"></i><i style="height:57px"></i><i style="height:69px"></i><i style="height:37px"></i><i style="height:51px"></i><i style="height:62px"></i><i class="hi" style="height:78px"></i>
+              </div>
+              <div class="an-foot"><span>Connected</span><strong>84.2%</strong></div>
+            </div>
+          </div>
+
+          <!-- Deploy card -->
+          <div class="bento-card">
+            <span class="bento-eyebrow">Deploy</span>
+            <h3 style="font-size: 20px;">Point a number and run.</h3>
+            <p>Inbound and outbound on the same agent. Bring your own SIP or use Claritel's telephony network — DLT-registered where applicable.</p>
+            <div style="display:flex; flex-wrap: wrap; gap: 6px; margin-top: 12px;">
+              <span class="int-chip" style="font-size:11.5px;">Plivo</span>
+              <span class="int-chip" style="font-size:11.5px;">Twilio</span>
+              <span class="int-chip" style="font-size:11.5px;">Airtel SIP</span>
+              <span class="int-chip" style="font-size:11.5px;">Vodafone SIP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCTS ============ -->
+    <section id="products" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="tag">Three surfaces</span>
+          <h2>Three ways I show up <span style="color: var(--txt-3);">for your team.</span></h2>
+          <p>Voice on the phone. Chat on your website and WhatsApp. Quality evaluation across everything. One rubric. One Clara.</p>
+        </div>
+        <div class="prod-grid">
+          <article class="prod">
+            <span class="label">On the phone</span>
+            <p class="quote">"I answer your inbound lines and run your outbound campaigns."</p>
+            <p class="body">I don't put anyone on hold, don't make them repeat themselves, and don't cut them off mid-sentence. Sales, service, appointments, renewals, feedback and collections — inbound and outbound.</p>
+            <a class="learn" href="#">Explore Clara Voice →</a>
+          </article>
+          <article class="prod">
+            <span class="label">On website &amp; WhatsApp</span>
+            <p class="quote">"The same Clara — on text, in seconds."</p>
+            <p class="body">I reply in English, Hindi or Hinglish. I know your CRM, your knowledge base, your product. When a person needs to take over, I hand the thread across cleanly.</p>
+            <a class="learn" href="#">Explore Clara Chat →</a>
+          </article>
+          <article class="prod">
+            <span class="label">Watching quality</span>
+            <p class="quote">"Every score should have something behind it."</p>
+            <p class="body">ClaraLens evaluates every voice and text interaction — mine, your team's, anyone's — against your rubric. Evidence anchored to the exact transcript line.</p>
+            <a class="learn" href="#">Explore ClaraLens →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CUSTOMERS ============ -->
+    <section id="customers" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="tag">Teams that put me to work</span>
+          <h2>Real conversations, <span style="color: var(--txt-3);">taken care of.</span></h2>
+          <p>A snapshot of the conversations I'm handling today. Named-customer testimonials and metrics are being verified with each team and land here as they're approved.</p>
+        </div>
+
+        <div class="cust-grid">
+          <article class="cust">
+            <h3>Panasonic</h3>
+            <p class="q">I extend their contact centre before and after working hours, and run the follow-up loop so no query and no feedback call goes untended.</p>
+            <ul>
+              <li>Post- and pre-working-hours inbound coverage</li>
+              <li>Inbound customer service triage</li>
+              <li>Retailer KYC verification calls</li>
+              <li>NPS and post-service feedback calling</li>
+            </ul>
+            <div class="attr">Testimonial pending verification</div>
+          </article>
+
+          <article class="cust">
+            <h3>Rupeek</h3>
+            <p class="q">I qualify sales enquiries, answer lending questions, and pull live gold rates into the conversation so a caller gets a real answer, not a call-back promise.</p>
+            <ul>
+              <li>Sales qualification for inbound enquiries</li>
+              <li>Lending enquiry handling</li>
+              <li>Real-time gold-rate lookups mid-conversation</li>
+            </ul>
+            <div class="attr">Testimonial pending verification</div>
+          </article>
+
+          <article class="cust">
+            <h3>Zolve</h3>
+            <p class="q">I reach customers on payment failures, log the outcome even when the call lands on voicemail, run renewals, and move collections along without a person having to dial.</p>
+            <ul>
+              <li>Payment-failure recovery calls</li>
+              <li>Call outcome recorded even on voicemail</li>
+              <li>Renewals calling</li>
+              <li>Collections calling</li>
+            </ul>
+            <div class="attr">Testimonial pending verification</div>
+          </article>
+
+          <article class="cust">
+            <h3>Quick Heal</h3>
+            <p class="q">I run renewal and sales calling on expiry buckets, and answer technical queries from a RAG-grounded knowledge base — so I don't guess the answer.</p>
+            <ul>
+              <li>Renewal &amp; sales calling</li>
+              <li>Expiry-bucket-based renewal campaigns (±X days)</li>
+              <li>Technical bot for queries, roadblocks and FAQs on a RAG knowledge base</li>
+            </ul>
+            <div class="attr">Testimonial pending verification</div>
+          </article>
+
+          <article class="cust">
+            <h3>Atlantic</h3>
+            <p class="q">I take sales enquiries — including international shipping questions — and handle parcel-status queries live, so the team focuses on the harder problems.</p>
+            <ul>
+              <li>Sales queries (e.g. parcels to Australia)</li>
+              <li>Customer service on order status and options</li>
+              <li>Parcel-status and delivery enquiries</li>
+            </ul>
+            <div class="attr">Testimonial pending verification</div>
+          </article>
+
+          <article class="cust">
+            <h3>Univariety</h3>
+            <p class="q">I call alumni, capture their information into the CRM, book counsellor appointments, and follow up when a student needs a nudge — reminders and reschedules included.</p>
+            <ul>
+              <li>Alumni calling with CRM data capture</li>
+              <li>Counsellor appointment booking</li>
+              <li>Follow-up and reminder calls</li>
+              <li>Rescheduling flows</li>
+            </ul>
+            <div class="attr">Testimonial pending verification</div>
+          </article>
+
+          <article class="cust">
+            <h3>Flowstack</h3>
+            <p class="q">Deployment in flight. Use-case details land here as they're confirmed.</p>
+            <ul>
+              <li>Early-access engagement in progress</li>
+            </ul>
+            <div class="attr">Status · In flight</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DEMO ============ -->
+    <section id="demo" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="tag">Hear it for yourself</span>
+          <h2>Don't take my word for it. <span style="color: var(--txt-3);">Talk to me.</span></h2>
+          <p>Pick an agent, tell me your number, and hear how Clara handles the call end-to-end — barge-in, tool calls and all.</p>
+        </div>
+
+        <div class="agent-panel" id="agentPanel">
+          <div role="tablist" class="agent-tabs">
+            <button role="tab" aria-selected="true"  data-agent="sales"        class="agent-tab"><span class="k">01</span> Sales · Outbound</button>
+            <button role="tab" aria-selected="false" data-agent="support"      class="agent-tab"><span class="k">02</span> Customer Support · Inbound</button>
+            <button role="tab" aria-selected="false" data-agent="appointments" class="agent-tab"><span class="k">03</span> Appointment Booking</button>
+            <button role="tab" aria-selected="false" data-agent="automotive"   class="agent-tab"><span class="k">04</span> Automobile Service Booking</button>
+          </div>
+
+          <div class="agent-stage">
+            <div class="agent-info">
+              <h3 id="agentTitle">Sales · Outbound</h3>
+              <p id="agentDesc">I'll call your number, introduce myself, qualify a sample lead, and put a meeting on the calendar — the same flow a rep would run, in under two minutes.</p>
+              <div class="agent-meta" id="agentMeta">
+                <span>Voice · English / Hindi</span>
+                <span>Barge-in enabled</span>
+                <span>CRM write-back demo</span>
+              </div>
+            </div>
+            <button class="agent-call" id="agentCall">
+              <span class="ring"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 5l3 4-2 2a12 12 0 006 6l2-2 4 3-2 3a3 3 0 01-3 1A16 16 0 013 8a3 3 0 011-3l3-2z" fill="currentColor"/></svg></span>
+              Talk to me now
+            </button>
+          </div>
+          <p class="agent-note">Two minutes · Your number stays private · You can end the call at any time</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INTEGRATIONS ============ -->
+    <section id="integrations" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="tag">Works with your stack</span>
+          <h2>The lines and tools <span style="color: var(--txt-3);">your team already runs on.</span></h2>
+          <p>Telephony is live today. LLM, STT, TTS and tool integrations are being expanded — this block updates as each is confirmed.</p>
+        </div>
+
+        <div style="max-width: 780px; margin: 40px auto 0;">
+          <div class="int-row">
+            <div class="int-label">Telephony</div>
+            <div class="int-chips">
+              <span class="int-chip">Plivo</span>
+              <span class="int-chip">Twilio</span>
+              <span class="int-chip">Claritel</span>
+              <span class="int-chip">Airtel SIP</span>
+              <span class="int-chip">Vodafone SIP</span>
+              <span class="int-chip">Generic SIP</span>
+            </div>
+          </div>
+          <div class="int-row">
+            <div class="int-label">Tools &amp; workflows</div>
+            <div class="int-chips">
+              <span class="int-chip">WebSocket</span>
+              <span class="int-chip">REST API</span>
+              <span class="int-chip">Post-call webhooks</span>
+              <span class="int-chip">Salesforce workflows</span>
+            </div>
+          </div>
+          <div class="int-row">
+            <div class="int-label">LLM · STT · TTS</div>
+            <div class="int-chips">
+              <span class="int-chip tbd">Per-agent provider choice — full list landing soon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section id="faq" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="tag">Questions people ask</span>
+          <h2>FAQ</h2>
+          <p>Short, honest answers — the same ones I give when an answer engine or a buyer asks.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq">
+            <summary class="faq-q">What is Clara? <span class="plus" aria-hidden="true">+</span></summary>
+            <p class="faq-a">Clara is Claritel's agentic AI for business conversations. I take care of voice, WhatsApp and website chat — understanding what someone needs, taking action across your systems, and handing off to a person when one is needed. I have three products: Clara Voice, Clara Chat, and ClaraLens.</p>
+          </details>
+          <details class="faq">
+            <summary class="faq-q">How is Clara different from a chatbot or IVR? <span class="plus" aria-hidden="true">+</span></summary>
+            <p class="faq-a">A chatbot answers. An IVR asks you to press 1. I act. I understand context from live customer data, follow the business rules your team has set, complete the action on your systems, and follow through.</p>
+          </details>
+          <details class="faq">
+            <summary class="faq-q">Does Clara speak Hindi, Hinglish and other Indian languages? <span class="plus" aria-hidden="true">+</span></summary>
+            <p class="faq-a">Yes. I handle English, Hindi, Hinglish, Tamil, Telugu, Kannada, Marathi, Bengali and other Indian languages — including mid-conversation code switching. Speech models are tuned on real Indian call-centre audio.</p>
+          </details>
+          <details class="faq">
+            <summary class="faq-q">Who uses Clara? <span class="plus" aria-hidden="true">+</span></summary>
+            <p class="faq-a">Teams including Panasonic, Rupeek, Zolve, Quick Heal, Atlantic, Univariety and Flowstack use me across sales qualification, customer service, appointments, renewals, feedback and collections.</p>
+          </details>
+          <details class="faq">
+            <summary class="faq-q">Can I try Clara without signing up? <span class="plus" aria-hidden="true">+</span></summary>
+            <p class="faq-a">Yes — test an agent free in your browser. Five minutes from empty workspace to a real call.</p>
+          </details>
+          <details class="faq">
+            <summary class="faq-q">How is Clara priced? <span class="plus" aria-hidden="true">+</span></summary>
+            <p class="faq-a">Usage-based. Per connected minute for voice, per conversation for chat, per message for WhatsApp, per evaluated interaction for ClaraLens. Prepaid wallet in ₹, UPI or net-banking top-up, GST invoice, no seat licenses, no annual lock-in.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="final-cta">
+      <div class="ghost" aria-hidden="true"><span>CLARA</span></div>
+      <div class="wrap final-cta-inner">
+        <span class="tag">Ready when you are</span>
+        <h2 style="margin-top: 20px;">You have conversations to handle. <span class="mute-part">I'll take it from here.</span></h2>
+        <p>Talk to me directly, or book a walkthrough with someone from our team. Either way, I'll be here when you're ready.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#demo">Talk to me</a>
+          <a class="btn btn-outline" href="#">Book a walkthrough</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap">
+      <div class="foot-brand">
+        <div>
+          <h2>Clara — agentic AI for business conversations, by Claritel</h2>
+          <p class="tag-line">I take care of conversations. So your team can take care of what only people can do.</p>
+        </div>
+        <a class="btn btn-primary btn-pill" href="#demo">Test Clara free</a>
+      </div>
+
+      <div class="foot-grid">
+        <div>
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#">Clara Voice</a></li>
+            <li><a href="#">Clara Chat</a></li>
+            <li><a href="#">ClaraLens</a></li>
+            <li><a href="#workspace">The workspace</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Use cases</h4>
+          <ul>
+            <li><a href="#">Customer support</a></li>
+            <li><a href="#">Sales &amp; outreach</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Appointment booking</a></li>
+            <li><a href="#">Order management</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Claritel</h4>
+          <ul>
+            <li><a href="#">About Claritel</a></li>
+            <li><a href="#">Contact Centre Dialer</a></li>
+            <li><a href="#">CloudConnect telephony</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>More</h4>
+          <ul>
+            <li><a href="#customers">Customers</a></li>
+            <li><a href="#integrations">Integrations</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="/llms.txt">llms.txt</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="foot-bottom">
+        <span>© <span class="mono">2026</span> Claritel Communications · Made in Bengaluru</span>
+        <span><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">DPDP</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ ASK CLARA CHAT WIDGET ============ -->
+  <button class="askbtn" id="askBtn" data-open="false" aria-label="Ask Clara">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 2.5A1.5 1.5 0 0 1 3.5 1h9A1.5 1.5 0 0 1 14 2.5v7A1.5 1.5 0 0 1 12.5 11H9l-3 3v-3H3.5A1.5 1.5 0 0 1 2 9.5v-7Z" fill="currentColor" fill-opacity="0.9"/></svg>
+    <span id="askBtnLabel">Ask Clara</span>
+  </button>
+  <div class="askpanel" id="askPanel" data-open="false" role="dialog" aria-label="Chat with Clara">
+    <div class="head">
+      <div class="avatar" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="3" width="10" height="8" rx="3" fill="#C6C6FC"/>
+          <circle cx="6.5" cy="6.5" r="1.5" fill="#1B1B3C"/>
+          <circle cx="11.5" cy="6.5" r="1.5" fill="#1B1B3C"/>
+          <rect x="6" y="9" width="6" height="1.5" rx="0.75" fill="#9393E7"/>
+        </svg>
+      </div>
+      <div class="who">Clara<span class="s"><span style="width:6px; height:6px; border-radius: 999px; background: var(--ok); display:inline-block;"></span> Active</span></div>
+    </div>
+    <div class="msgs" id="askMsgs">
+      <div class="m"><div class="bubble">Hi! I'm Clara. Ask me anything about Claritel — pricing, integrations, languages, or how to get started.</div></div>
+    </div>
+    <form class="input" id="askForm">
+      <input id="askInput" type="text" placeholder="Ask Clara anything…" autocomplete="off" />
+      <button type="submit" aria-label="Send">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 2 11 13M22 2 15 22l-4-9-9-4 20-7Z" stroke="#1B1B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </form>
+  </div>
+
+  <script>
+    // Mobile menu
+    (function () {
+      var btn = document.getElementById('menuBtn'), menu = document.getElementById('mobileMenu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', function () {
+        var open = menu.getAttribute('data-open') === 'true';
+        menu.setAttribute('data-open', String(!open));
+        btn.setAttribute('aria-expanded', String(!open));
+      });
+    })();
+
+    // Nav scroll flip
+    (function () {
+      window.addEventListener('scroll', function () {
+        document.body.classList.toggle('scrolled', window.scrollY > 12);
+      }, { passive: true });
+    })();
+
+    // Smooth scroll for anchors
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          var id = a.getAttribute('href'); if (!id || id === '#') return;
+          var t = document.querySelector(id); if (!t) return;
+          e.preventDefault();
+          t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+        });
+      });
+    })();
+
+    // Agent-tab toggler
+    (function () {
+      var panel = document.getElementById('agentPanel'); if (!panel) return;
+      var title = document.getElementById('agentTitle');
+      var desc  = document.getElementById('agentDesc');
+      var meta  = document.getElementById('agentMeta');
+      var tabs  = panel.querySelectorAll('.agent-tab');
+      var call  = document.getElementById('agentCall');
+      var agents = {
+        sales:        { title:'Sales · Outbound',              desc:"I'll call your number, introduce myself, qualify a sample lead, and put a meeting on the calendar — the same flow a rep would run, in under two minutes.", meta:['Voice · English / Hindi','Barge-in enabled','CRM write-back demo'] },
+        support:      { title:'Customer Support · Inbound',     desc:"Ask me a Tier-1 support question — balance, plan change, order status. I'll answer from a live knowledge base and hand off to a human when the query needs one.", meta:['Voice · English / Hindi / Hinglish','Knowledge-grounded','Human handoff'] },
+        appointments: { title:'Appointment Booking',            desc:"I'll walk through booking, rescheduling and confirming a slot — with a real calendar lookup and a reminder set for the caller.", meta:['Voice · English / Hindi','Live calendar','Reminder scheduling'] },
+        automotive:   { title:'Automobile Service Booking',     desc:"I'll take a service request end to end — vehicle details, preferred slot, pick-up option, service centre routing — the way a dealer's service desk would.", meta:['Voice · English / Hindi','Slot & centre lookup','Service-desk handoff'] }
+      };
+      function select(k) {
+        var a = agents[k]; if (!a) return;
+        title.textContent = a.title; desc.textContent = a.desc;
+        meta.innerHTML = a.meta.map(function (m) { return '<span>' + m + '</span>'; }).join('');
+        tabs.forEach(function (t) { t.setAttribute('aria-selected', String(t.dataset.agent === k)); });
+      }
+      tabs.forEach(function (t) { t.addEventListener('click', function () { select(t.dataset.agent); }); });
+      if (call) call.addEventListener('click', function () {
+        var current = panel.querySelector('.agent-tab[aria-selected="true"]');
+        alert("Live demo call — this button will start a WebRTC session with the " + (current ? current.textContent.replace(/\s+/g,' ').trim() : 'selected') + " agent when the endpoint is wired.");
+      });
+    })();
+
+    // Ask Clara chat
+    (function () {
+      var btn = document.getElementById('askBtn');
+      var panel = document.getElementById('askPanel');
+      var lbl = document.getElementById('askBtnLabel');
+      var form = document.getElementById('askForm');
+      var input = document.getElementById('askInput');
+      var msgs = document.getElementById('askMsgs');
+      if (!btn || !panel || !form) return;
+
+      function toggle() {
+        var open = panel.getAttribute('data-open') === 'true';
+        panel.setAttribute('data-open', String(!open));
+        btn.setAttribute('data-open', String(!open));
+        lbl.textContent = open ? 'Ask Clara' : 'Close';
+        if (!open) setTimeout(function () { input.focus(); }, 100);
+      }
+      btn.addEventListener('click', toggle);
+
+      var RESP = {
+        pricing:  "Usage-based, in ₹. Per connected minute for voice, per conversation for chat, per message for WhatsApp, per evaluated interaction for ClaraLens. Prepaid wallet, GST invoice, no seat licenses.",
+        calls:    "I handle inbound and outbound at scale with configurable concurrency. What use case are you building for?",
+        demo:     "I can put you in front of a live agent — Sales, Support, Appointments or Automobile Service. Which one would you like to try?",
+        hindi:    "Haan, main Hindi aur Hinglish mein baat kar sakti hoon. Marathi, Tamil, Telugu, Kannada, Bengali bhi supported hain.",
+        whatsapp: "WhatsApp is a first-class channel. I can send follow-ups, order updates and confirmations via WhatsApp Business.",
+        who:      "Panasonic, Rupeek, Zolve, Quick Heal, Atlantic, Univariety and Flowstack are teams using me today. Named testimonials land as they're verified.",
+        default:  "I can help with that. What would you like to know — pricing, integrations, languages, or which use case fits your team?"
+      };
+      function pick(t) {
+        t = t.toLowerCase();
+        if (/price|cost|wallet|rupee|₹|inr/.test(t)) return RESP.pricing;
+        if (/call|concurrent|inbound|outbound/.test(t)) return RESP.calls;
+        if (/demo|schedule|meeting|book/.test(t)) return RESP.demo;
+        if (/hindi|hinglish|marathi|tamil|telugu|kannada|bengali/.test(t)) return RESP.hindi;
+        if (/whatsapp|message|sms/.test(t)) return RESP.whatsapp;
+        if (/who|customer|panasonic|rupeek|zolve|quick|atlantic|univariety|flowstack/.test(t)) return RESP.who;
+        return RESP.default;
+      }
+      function add(from, text) {
+        var d = document.createElement('div');
+        d.className = 'm' + (from === 'me' ? ' me' : '');
+        var b = document.createElement('div');
+        b.className = 'bubble'; b.textContent = text;
+        d.appendChild(b); msgs.appendChild(d);
+        msgs.scrollTop = msgs.scrollHeight;
+      }
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var v = input.value.trim(); if (!v) return;
+        add('me', v); input.value = '';
+        setTimeout(function () { add('clara', pick(v)); }, 700 + Math.random() * 500);
+      });
+    })();
+  </script>
+</body>
+</html>
